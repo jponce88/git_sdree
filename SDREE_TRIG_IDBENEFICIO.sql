@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Trigger SDREE_TRIG_IDBENEFICIO
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TEST"."SDREE_TRIG_IDBENEFICIO" BEFORE INSERT ON test.SDREE_BENEFICIOS_EMPLEADOS
+FOR EACH ROW
+DECLARE
+
+BEGIN
+
+    SELECT test.sdree_sec_IDBENEFICIO.NEXTVAL INTO :NEW.id_BENEFICIO FROM DUAL;
+
+END;
+/
+ALTER TRIGGER "TEST"."SDREE_TRIG_IDBENEFICIO" ENABLE;
